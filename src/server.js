@@ -1,12 +1,18 @@
+require('dotenv').config();
 const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
 
 const app = express();
+const { port } = require('./config');
 
-const PORT = 3000;
+const PORT = port || 5000;
 
-let users = [
+const pass = process.env.PASS;
+console.log('pass ===', pass);
+// console.log('process.env ===', process.env);
+
+const users = [
   {
     id: 1,
     name: 'Serbentautas',
