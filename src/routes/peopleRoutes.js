@@ -81,11 +81,15 @@ peopleRouter.get('/api/people', (req, res) => {
 
 // GET - /api/people/salary/avg - gausim vis zmoniu atlyginimu vidurki
 peopleRouter.get('/api/people/salary/avg', (req, res) => {
-  let total = 0;
-  people.forEach((pObj) => {
-    total += pObj.income;
-  });
-  const avg = total / people.length;
+  // let total = 0;
+  // people.forEach((pObj) => {
+  //   total += pObj.income;
+  // });
+  // const avg = total / people.length;
+  const avg = people.reduce(
+    (total, pObj) => total + pObj.income / people.length,
+    0
+  );
   res.json({ avg: +avg.toFixed(2) });
 });
 
