@@ -1,6 +1,17 @@
 GET http://localhost:3000
 
-###
+### Get all users
 GET http://localhost:3000/api/users
 
 ###
+
+### Single user :userId 
+GET http://localhost:3000/api/users/1
+
+### get all books
+GET http://localhost:3000/api/books
+
+###
+
+### Single book :bookId 
+GET http://localhost:3000/api/books/1
