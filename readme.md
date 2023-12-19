@@ -1,8 +1,11 @@
-# Steps
+# UZD
 
-1. pradeti nauja projekta
-2. git + github
-3. npm
-4. express morgan cors nodemon(dev)
-5. pasirasyti basic express server kuris suksis and port 3000
-6. instaliuoti eslint
+## front
+
+// surinkti inputus ir issiusti i back end api
+
+// atvaizuoti visas knygas korteliu pavidalu su mygtuku edit
+
+// pasudus edit, supildoma forma su tos knygos reiksmem ir paspaus
+// submit siunciam atnaujinimo uzklausa
+// paspaudus edit pasikeicia submit mygtukas i edit
