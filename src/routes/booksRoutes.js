@@ -1,5 +1,7 @@
 const express = require('express');
 
+const { v4: uid } = require('uuid');
+
 const booksRouter = express.Router();
 
 // data
@@ -63,5 +65,14 @@ booksRouter.get('/api/books/:bookId', (req, res) => {
 });
 
 // POST /api/books - sukuria nauja knyga su gauta informacija
+booksRouter.post('/api/books', (req, res) => {
+  console.log('req.body ===', req.body);
+  const newPost = {
+    id: uid(),
+    ...req.body,
+  };
+  books.push(newPost);
+  res.json(books);
+});
 
 module.exports = booksRouter;

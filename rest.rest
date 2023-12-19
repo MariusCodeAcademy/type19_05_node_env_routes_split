@@ -16,10 +16,10 @@ POST http://localhost:3000/api/books
 Content-Type: application/json
 
 {
-  "title": "Book 5",
-  "year": 2023,
-  "isPublished": false,
-  "category": "Thriller",
+  "title": "Little Prince",
+  "year": 1758,
+  "isPublished": true,
+  "category": "Fantasy"
 }
 
 ###
