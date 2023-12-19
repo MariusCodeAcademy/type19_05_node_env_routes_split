@@ -77,4 +77,16 @@ peopleRouter.get('/api/people', (req, res) => {
   res.json(people);
 });
 
+// GET - /api/people/colors/red - grazins zmones kurie turi red spalva spalvu masyve
+
+// GET - /api/people/salary/avg - gausim vis zmoniu atlyginimu vidurki
+peopleRouter.get('/api/people/salary/avg', (req, res) => {
+  let total = 0;
+  people.forEach((pObj) => {
+    total += pObj.income;
+  });
+  const avg = total / people.length;
+  res.json({ avg: +avg.toFixed(2) });
+});
+
 module.exports = peopleRouter;
