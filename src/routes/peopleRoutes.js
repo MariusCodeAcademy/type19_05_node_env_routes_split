@@ -1,3 +1,6 @@
+const express = require('express');
+
+const popleRouter = express.Router();
 // data
 const people = [
   {
@@ -67,3 +70,11 @@ const people = [
     hasCar: false,
   },
 ];
+
+// routes
+// GET - /api/people - gausim visus zmones
+popleRouter.get('/api/people', (req, res) => {
+  res.json(people);
+});
+
+module.exports = popleRouter;
