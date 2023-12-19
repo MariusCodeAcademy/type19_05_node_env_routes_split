@@ -1,6 +1,6 @@
 const express = require('express');
 
-const popleRouter = express.Router();
+const peopleRouter = express.Router();
 // data
 const people = [
   {
@@ -73,8 +73,8 @@ const people = [
 
 // routes
 // GET - /api/people - gausim visus zmones
-popleRouter.get('/api/people', (req, res) => {
+peopleRouter.get('/api/people', (req, res) => {
   res.json(people);
 });
 
-module.exports = popleRouter;
+module.exports = peopleRouter;

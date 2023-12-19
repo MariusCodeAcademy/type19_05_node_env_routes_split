@@ -24,10 +24,12 @@ app.get('/', (req, res) => {
 // importuojam userRouter
 const userRouter = require('./routes/usersRoutes');
 const booksRouter = require('./routes/booksRoutes');
+const peopleRouter = require('./routes/peopleRoutes');
 
 // panaudoju users routeri
 app.use('/', userRouter);
 app.use('/', booksRouter);
+app.use('/', peopleRouter);
 
 // GET - /api/people - gausim visus zmones
 // GET - /api/people/married - gausim visus susituokuius zmones
@@ -36,10 +38,11 @@ app.use('/', booksRouter);
 // route error 404
 // jei iki cia atejo kodas, reiskia tokio
 // url kuriuo kreipiamasi nera
-app.get('*', (req, res) => {
+app.all('*', (req, res) => {
   res.status(404).json({
     msg: 'Path does not exist',
     url: req.path,
+    method: req.method,
   });
 });
 

@@ -11,7 +11,23 @@ GET http://localhost:3000/api/users/1
 ### get all books
 GET http://localhost:3000/api/books
 
+### Create book
+POST http://localhost:3000/api/books
+Content-Type: application/json
+
+{
+  "title": "Book 5",
+  "year": 2023,
+  "isPublished": false,
+  "category": "Thriller",
+}
+
 ###
 
 ### Single book :bookId 
 GET http://localhost:3000/api/books/2
+
+### get all pople
+GET http://localhost:3000/api/people
+
+###

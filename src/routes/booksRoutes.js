@@ -62,4 +62,6 @@ booksRouter.get('/api/books/:bookId', (req, res) => {
   res.json(found);
 });
 
+// POST /api/books - sukuria nauja knyga su gauta informacija
+
 module.exports = booksRouter;
