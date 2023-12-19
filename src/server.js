@@ -104,7 +104,9 @@ app.get('/api/books', (req, res) => {
   res.json(books);
 });
 
-// route error
+// GET /api/books/2 grazina knyga kurios id 2
+
+// route error 404
 // jei iki cia atejo kodas, reiskia tokio
 // url kuriuo kreipiamasi nera
 app.get('*', (req, res) => {
