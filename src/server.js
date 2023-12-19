@@ -29,6 +29,10 @@ const booksRouter = require('./routes/booksRoutes');
 app.use('/', userRouter);
 app.use('/', booksRouter);
 
+// GET - /api/people - gausim visus zmones
+// GET - /api/people/married - gausim visus susituokuius zmones
+// GET - /api/people/salary/avg - gausim vis zmoniu atlyginimu vidurki
+
 // route error 404
 // jei iki cia atejo kodas, reiskia tokio
 // url kuriuo kreipiamasi nera
