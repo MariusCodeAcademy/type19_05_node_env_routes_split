@@ -105,6 +105,19 @@ app.get('/api/books', (req, res) => {
 });
 
 // GET /api/books/2 grazina knyga kurios id 2
+app.get('/api/books/:bookId', (req, res) => {
+  const bookId = +req.params.bookId;
+  // surasti obj su id === bookId
+  const found = books.find((bObj) => bObj.id === bookId);
+  // jei neradom
+  if (found === undefined) {
+    res.status(404).json({
+      msg: `book not found with id ${bookId}`,
+    });
+    return;
+  }
+  res.json(found);
+});
 
 // route error 404
 // jei iki cia atejo kodas, reiskia tokio
