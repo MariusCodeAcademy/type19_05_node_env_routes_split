@@ -12,26 +12,6 @@ const pass = process.env.PASS;
 console.log('pass ===', pass);
 // console.log('process.env ===', process.env);
 
-const users = [
-  {
-    id: 1,
-    name: 'Serbentautas',
-    town: 'Vilnius',
-    isDeleted: false,
-  },
-  {
-    id: 2,
-    name: 'Lenteja',
-    town: 'Kaunas',
-    isDeleted: false,
-  },
-  {
-    id: 3,
-    name: 'James',
-    town: 'London',
-    isDeleted: false,
-  },
-];
 const books = [
   {
     id: 1,
@@ -78,25 +58,11 @@ app.use(morgan('dev'));
 app.get('/', (req, res) => {
   res.send('Hello World');
 });
+// importuojam userRouter
+const userRouter = require('./routes/usersRoutes');
 
-// GET /api/users - grazina visus vartotojus
-app.get('/api/users', (req, res) => {
-  res.json(users);
-});
-
-app.get('/api/users/:userId', (req, res) => {
-  const userId = +req.params.userId;
-  // surasti obj su id === userId
-  const found = users.find((uObj) => uObj.id === userId);
-  // jei neradom
-  if (found === undefined) {
-    res.status(404).json({
-      msg: `user not found with id ${userId}`,
-    });
-    return;
-  }
-  res.json(found);
-});
+// panaudoju users routeri
+app.use('/', userRouter);
 
 // BOOKS ROUTES
 // GET /api/books - grazina visas knygas
